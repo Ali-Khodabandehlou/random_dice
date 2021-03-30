@@ -79,35 +79,35 @@ def draw_six():
 def main():
     print("welcoe to the random dice simulator!")
     
-	while True:
+    while True:
         num_of_dices = int(input("\nenter number of dices:"))
         if num_of_dices <= 0:
             print("\nplease enter a number bigger than 1!\n")
             continue;
     
-    if num_of_dices <= 5:
+        if num_of_dices <= 5:
             for i in range(0, num_of_dices):
                 draw_num(random.randint(1, 6))
-
-			for i in range(0, 7):
+                
+            for i in range(0, 7):
                 print(dices[i])
                 dices[i] = "\n"
-            
-        elif num_of_dices > 5:
+
+        elif num_of_dices > 4:
             bigger_dices = []
             
-			for i in range(0, num_of_dices):
+            for i in range(0, num_of_dices):
                 draw_num(random.randint(1, 6))
-                if (i + 1) % 5 == 0:
+                if (i + 1) % 4 == 0:
                     for j in range(0, 7):
                         bigger_dices.append(dices[j])
                         dices[j] = "\n"
             
-			for i in range(0, len(bigger_dices)):
+            for i in range(0, len(bigger_dices)):
                 print(bigger_dices[i])
             bigger_dices.clear()
             
-			for i in range(0, 7):
+            for i in range(0, 7):
                 if dices[i] != "\n":
                     print(dices[i])
                     dices[i] = "\n"
